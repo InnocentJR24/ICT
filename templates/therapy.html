@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="top-nav">
+  <div class="nav-row">
+    <a href="/" class="back-btn">←</a>
+    <div><div class="nav-title">Latihan Perhatian Bersama</div><div class="nav-sub">Fasa 1 · Hari 14</div></div>
+    <span style="font-size:22px;color:#fff">🔊</span>
+  </div>
+</div>
+<div style="height:14px"></div>
+<div class="instruction-hero">
+  <div class="emoji">🎯</div>
+  <h2>Tunjukkan benda kepada Darren</h2>
+  <p>Sebut namanya dengan jelas. Tunggu dia melihat muka anda. Ulang 5 kali.</p>
+</div>
+<div class="audio-box">
+  <div class="audio-label">🔊 ARAHAN AUDIO AKTIF</div>
+  <div class="audio-text">"Ambil bola merah, tunjuk kepada Darren dan katakan 'bola'. Tunggu dia tengok muka awak sebelum teruskan..."</div>
+</div>
+<form id="therapy-form">
+  <div class="section-label">REKOD SETIAP PERCUBAAN</div>
+  <div class="try-grid">
+    {% for i in range(5) %}
+    <div class="try-col">
+      <div class="try-num">#{{ i+1 }}</div>
+      <input type="hidden" name="t{{ i }}" value="partial">
+      <button type="button" class="try-btn" data-group="{{ i }}" data-val="check">✅</button>
+      <button type="button" class="try-btn sel-partial" data-group="{{ i }}" data-val="partial">🔶</button>
+      <button type="button" class="try-btn" data-group="{{ i }}" data-val="cross">❌</button>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="section-label">MOOD DARREN</div>
+  <input type="hidden" id="mood-input" value="happy">
+  <div class="mood-row">
+    {% for emoji, val in [("😢","very_sad"),("😕","sad"),("😐","neutral"),("🙂","happy"),("😄","very_happy")] %}
+    <button type="button" class="mood-btn {% if val=="happy" %}selected{% endif %}" data-val="{{ val }}">{{ emoji }}</button>
+    {% endfor %}
+  </div>
+  <button type="submit" class="btn btn-primary btn-full">✅ Simpan &amp; Selesai</button>
+</form>
+{% endblock %}

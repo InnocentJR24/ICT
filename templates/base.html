@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SayangASD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="shell">
+  <div class="status-bar"><span>09:41</span><span>🔋 74% &nbsp;📶 4G</span></div>
+  {% block content %}{% endblock %}
+  <nav class="bottom-nav">
+    <a href="/"          class="nav-item {% if active=='home'      %}active{% endif %}"><span class="nav-icon">🏠</span>Utama</a>
+    <a href="/therapy"   class="nav-item {% if active=='therapy'   %}active{% endif %}"><span class="nav-icon">🗣️</span>Terapi</a>
+    <a href="/milestone" class="nav-item {% if active=='milestone' %}active{% endif %}"><span class="nav-icon">📋</span>Penilaian</a>
+    <a href="/aid"       class="nav-item {% if active=='aid'       %}active{% endif %}"><span class="nav-icon">💰</span>Bantuan</a>
+    <a href="/chat"      class="nav-item {% if active=='chat'      %}active{% endif %}"><span class="nav-icon">💬</span>Pakar</a>
+  </nav>
+</div>
+<button class="demo-toggle" onclick="document.getElementById('demo-nav').classList.toggle('open')">☰ Demo Nav</button>
+<div id="demo-nav" class="demo-nav">
+  <div class="demo-nav-title">SayangASD Demo</div>
+  <div class="demo-section">👩 Siew Hua (Caregiver)</div>
+  <a href="/"        class="demo-link {% if active=='home'      %}cur{% endif %}">🏠 Home</a>
+  <a href="/therapy" class="demo-link {% if active=='therapy'   %}cur{% endif %}">🗣️ Therapy Session</a>
+  <a href="/chat"    class="demo-link {% if active=='chat'      %}cur{% endif %}">💬 Specialist Chat</a>
+  <div class="demo-section">🏥 Fadzli (CHW)</div>
+  <a href="/milestone" class="demo-link {% if active=='milestone' %}cur{% endif %}">📋 Milestone Assessment</a>
+  <div class="demo-section">🏘️ Dato' Razak (Village Head)</div>
+  <a href="/aid"      class="demo-link {% if active=='aid'      %}cur{% endif %}">💰 Financial Aid</a>
+  <a href="/referral" class="demo-link {% if active=='referral' %}cur{% endif %}">📨 Referral Form</a>
+  <div class="demo-section">Edge Cases</div>
+  <a href="/offline"  class="demo-link {% if active=='offline'  %}cur{% endif %}">📵 Offline Mode</a>
+  <a href="/conflict" class="demo-link {% if active=='conflict' %}cur{% endif %}">⚠️ Sync Conflict</a>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>

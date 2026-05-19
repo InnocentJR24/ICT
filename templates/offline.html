@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% set active = "offline" %}
+{% set offline_mode = true %}
+{% block content %}
+
+<div class="topbar grey">
+  <div class="topbar-row">
+    <a href="/" class="topbar-back">←</a>
+    <div>
+      <div class="topbar-big-title">SayangASD</div>
+      <div class="topbar-big-sub" style="color:#bbb;">Mod Luar Talian Aktif</div>
+    </div>
+    <div class="avatar" style="background:#666;">SH</div>
+  </div>
+</div>
+
+<div class="alert alert-warn" style="margin-top:12px;">
+  <div class="alert-title">📵 Tiada Internet — Cache Tempatan Aktif</div>
+  <div class="alert-body">Modul terapi dan direktori bantuan boleh digunakan sepenuhnya. Akan segerak semula secara automatik apabila dalam talian.</div>
+</div>
+
+<div class="section-label">Tersedia Luar Talian ✅</div>
+<div class="card">
+  <div class="act-row">
+    <div class="act-icon" style="background:#e8f5f3;">🗣️</div>
+    <div class="act-info">
+      <div class="act-title">Latihan Perhatian Bersama</div>
+      <div class="act-sub">Dimuat turun &nbsp;·&nbsp; 2.1 MB</div>
+    </div>
+    <span class="pill pill-green">✅</span>
+  </div>
+  <div class="act-row">
+    <div class="act-icon" style="background:#fdf0eb;">👋</div>
+    <div class="act-info">
+      <div class="act-title">Permainan Peniruan</div>
+      <div class="act-sub">Dimuat turun &nbsp;·&nbsp; 1.8 MB</div>
+    </div>
+    <span class="pill pill-green">✅</span>
+  </div>
+  <div class="act-row">
+    <div class="act-icon" style="background:#fef9ec;">💰</div>
+    <div class="act-info">
+      <div class="act-title">Direktori Bantuan Kewangan</div>
+      <div class="act-sub">Dimuat turun &nbsp;·&nbsp; 0.3 MB</div>
+    </div>
+    <span class="pill pill-green">✅</span>
+  </div>
+  <div class="act-row">
+    <div class="act-icon" style="background:#fef9ec;">📋</div>
+    <div class="act-info">
+      <div class="act-title">Senarai Semak Pencapaian (CHW)</div>
+      <div class="act-sub">Dimuat turun &nbsp;·&nbsp; 0.4 MB</div>
+    </div>
+    <span class="pill pill-green">✅</span>
+  </div>
+</div>
+
+<div class="section-label">Memerlukan Internet ⏳</div>
+<div class="card">
+  <div class="act-row">
+    <div class="act-icon" style="background:#f0f5f4;">💬</div>
+    <div class="act-info">
+      <div class="act-title">Mesej kepada Dr. Arina</div>
+      <div class="act-sub">Akan dihantar apabila dalam talian</div>
+    </div>
+    <span class="pill pill-amber">Tertangguh</span>
+  </div>
+  <div class="act-row">
+    <div class="act-icon" style="background:#f0f5f4;">📊</div>
+    <div class="act-info">
+      <div class="act-title">Segerak Kemajuan</div>
+      <div class="act-sub">3 sesi belum disegerak</div>
+    </div>
+    <span class="pill pill-amber">Tertangguh</span>
+  </div>
+</div>
+
+<div class="section-label">Penggunaan Data Bulan Ini</div>
+<div class="data-band">
+  <div class="data-label-row">
+    <span>Penggunaan semasa</span>
+    <span class="data-num">18 / 50 MB</span>
+  </div>
+  <div class="data-track">
+    <div class="data-fill" style="width:36%;"></div>
+  </div>
+  <div class="data-sub">32 MB baki — selamat untuk bulan ini</div>
+</div>
+
+<a href="/" class="btn btn-secondary">← Kembali ke Utama</a>
+
+{% endblock %}

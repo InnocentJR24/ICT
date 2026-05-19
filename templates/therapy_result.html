@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="top-nav">
+  <div class="nav-row">
+    <a href="/" class="back-btn">←</a>
+    <div><div class="nav-title">Sesi Selesai</div><div class="nav-sub">Latihan Perhatian Bersama</div></div>
+    <div style="width:36px"></div>
+  </div>
+</div>
+<div style="text-align:center;padding:28px 20px 14px">
+  <div style="font-size:56px">🎉</div>
+  <div style="font-size:22px;font-weight:800;color:var(--text);margin:10px 0 4px">Sesi Selesai!</div>
+  <div style="font-size:13px;color:var(--muted)">Darren melakukan dengan baik hari ini</div>
+</div>
+<div class="stat-strip">
+  <div class="stat-box"><div class="stat-num">{{ score }}/5</div><div class="stat-lbl">Kontak mata</div></div>
+  <div class="stat-box"><div class="stat-num">{% if mood in ["happy","very_happy"] %}😄{% elif mood=="neutral" %}😐{% else %}😕{% endif %}</div><div class="stat-lbl">Mood</div></div>
+  <div class="stat-box"><div class="stat-num">9 min</div><div class="stat-lbl">Tempoh</div></div>
+</div>
+<div class="section-label">TREND 14 HARI — KONTAK MATA</div>
+<div class="bar-chart">
+  {% for h in bars %}<div class="bar {% if loop.last %}hi{% endif %}" style="height:{{ h }}px"></div>{% endfor %}
+</div>
+<div class="alert alert-info">
+  <strong>💾 DISIMPAN SECARA TEMPATAN</strong>
+  Data kemajuan disimpan. Akan disegerakkan ke awan apabila dalam talian.
+</div>
+<div class="btn-row">
+  <a href="/chat" class="btn btn-primary">📤 Hantar ke Pakar</a>
+  <a href="/"     class="btn btn-secondary">🏠 Utama</a>
+</div>
+{% endblock %}

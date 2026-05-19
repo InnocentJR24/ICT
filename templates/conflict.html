@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% set active = "conflict" %}
+{% block content %}
+
+<div class="topbar">
+  <div class="topbar-row">
+    <a href="/" class="topbar-back">←</a>
+    <div class="topbar-center">
+      <div class="topbar-title">Konflik Segerak</div>
+      <div class="topbar-sub">Protokol Smart-Sync</div>
+    </div>
+    <div style="font-size:20px;color:#fff;">⚙️</div>
+  </div>
+</div>
+
+<div style="height:12px;"></div>
+
+<div class="alert alert-danger">
+  <div class="alert-title">⚠️ Konflik Data Dikesan</div>
+  <div class="alert-body">2 peranti merekod sesi untuk Darren semasa luar talian selama 10 hari. Sistem sedang menyelesaikan konflik secara automatik.</div>
+</div>
+
+<div class="section-label">Peranti 1 — Telefon Siew Hua</div>
+<div class="card">
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-dot"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-content">
+        <div class="tl-title">Latihan Perhatian Bersama</div>
+        <div class="tl-meta">9 Mei &nbsp;·&nbsp; 09:15 &nbsp;·&nbsp; Kontak mata 3/5</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-dot"></div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-content">
+        <div class="tl-title">Permainan Peniruan</div>
+        <div class="tl-meta">11 Mei &nbsp;·&nbsp; 10:02 &nbsp;·&nbsp; Mood 🙂</div>
+      </div>
+    </div>
+    <div class="tl-item" style="margin-bottom:0;">
+      <div class="tl-left">
+        <div class="tl-dot tl-dot-warn"></div>
+      </div>
+      <div class="tl-content">
+        <div class="tl-title tl-title-warn">⚠️ Kontak mata: 4/5</div>
+        <div class="tl-meta">18 Mei &nbsp;·&nbsp; 08:30 — <strong>berbeza dengan Peranti 2</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-label">Peranti 2 — Telefon Nenek</div>
+<div class="card">
+  <div class="timeline">
+    <div class="tl-item" style="margin-bottom:0;">
+      <div class="tl-left">
+        <div class="tl-dot tl-dot-warn"></div>
+      </div>
+      <div class="tl-content">
+        <div class="tl-title tl-title-warn">⚠️ Kontak mata: 2/5</div>
+        <div class="tl-meta">18 Mei &nbsp;·&nbsp; 07:55 — stempel masa lebih awal</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-label">Keputusan Smart-Sync</div>
+<div class="alert alert-success">
+  <div class="alert-title">⚙️ Resolusi Automatik Selesai</div>
+  <div class="alert-body">
+    ✅ Semua sesi dari kedua-dua peranti <strong>disimpan</strong> (kesatuan).<br>
+    ✅ Konflik 18 Mei: <strong>Peranti 1 menang</strong> — stempel masa lebih baru (08:30 &gt; 07:55).<br>
+    📋 Log konflik dihantar ke CHW Fadzli untuk semakan manual.
+  </div>
+</div>
+
+<div class="alert alert-warn">
+  <div class="alert-title">⚠️ Had Sistem</div>
+  <div class="alert-body">Jika tarikh dimasukkan secara manual dengan salah, sistem tidak dapat mengesan kesilapan — hanya susunan stempel masa. Pembetulan manual memerlukan bantuan CHW.</div>
+</div>
+
+<a href="/" class="btn btn-primary">✅ &nbsp; Terima &amp; Sambung</a>
+
+{% endblock %}

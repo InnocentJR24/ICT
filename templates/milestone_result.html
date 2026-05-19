@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% set active = "milestone" %}
+{% block content %}
+
+<div class="topbar">
+  <div class="topbar-row">
+    <a href="/milestone" class="topbar-back">←</a>
+    <div class="topbar-center">
+      <div class="topbar-title">Laporan Penilaian</div>
+      <div class="topbar-sub">Ahmad bin Hassan &nbsp;·&nbsp; 19 Mei 2026</div>
+    </div>
+    <div style="width:36px;"></div>
+  </div>
+</div>
+
+<div style="height:12px;"></div>
+
+<div class="result-hero">
+  <div class="result-hero-label">Keputusan Penilaian</div>
+  <div class="result-hero-name">Ahmad bin Hassan &nbsp;·&nbsp; 4 tahun</div>
+  <div class="result-hero-meta">Fadzli bin Nordin &nbsp;·&nbsp; 19 Mei 2026</div>
+  <div class="result-hero-pct">{{ pct }}%</div>
+  <div class="result-hero-score">{{ total }} daripada {{ max_score }} markah</div>
+</div>
+
+<div class="alert alert-{{ verdict[2] }}">
+  <div class="alert-title">{{ verdict[0] }}</div>
+  <div class="alert-body">{{ verdict[1] }}</div>
+</div>
+
+<div class="section-label">Pecahan Mengikut Kategori</div>
+<div class="card">
+  <div style="padding:4px 0;">
+    <div class="score-wrap">
+      <div class="score-label-row">
+        <span>Sosial</span>
+        <span>{{ s_soc }} / 8</span>
+      </div>
+      <div class="score-track">
+        <div class="score-fill" style="width:{{ s_soc_pct }}%;"></div>
+      </div>
+    </div>
+    <div class="score-wrap">
+      <div class="score-label-row">
+        <span>Komunikasi</span>
+        <span>{{ s_com }} / 8</span>
+      </div>
+      <div class="score-track">
+        <div class="score-fill" style="width:{{ s_com_pct }}%;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if verdict[2] == 'danger' %}
+<a href="#" class="btn btn-danger" onclick="alert('Laporan dihantar ke Hospital Sultanah Aminah. No. Rujukan: HSA-20260519-0089');return false;">
+  🚨 &nbsp; Hantar Rujukan Segera ke Hospital
+</a>
+{% else %}
+<a href="#" class="btn btn-primary" onclick="alert('Laporan dihantar ke pakar untuk semakan.');return false;">
+  📨 &nbsp; Hantar ke Pakar untuk Semakan
+</a>
+{% endif %}
+<a href="/milestone" class="btn btn-secondary">🔄 &nbsp; Mulakan Penilaian Baru</a>
+
+{% endblock %}
