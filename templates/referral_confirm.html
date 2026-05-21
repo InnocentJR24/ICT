@@ -6,8 +6,8 @@
   <div class="topbar-row">
     <a href="/aid" class="topbar-back">←</a>
     <div class="topbar-center">
-      <div class="topbar-title">Rujukan Dihantar</div>
-      <div class="topbar-sub">JKM Kluang</div>
+      <div class="topbar-title">{{ t.refconf_title }}</div>
+      <div class="topbar-sub">{{ t.refconf_sub }}</div>
     </div>
     <div style="width:36px;"></div>
   </div>
@@ -15,30 +15,26 @@
 
 <div class="success-screen">
   <div class="success-icon">✅</div>
-  <div class="success-title">Rujukan Dihantar</div>
-  <div class="success-sub">Pegawai JKM akan menghubungi keluarga Hassan dalam 5–7 hari bekerja.</div>
-  <div class="ref-id">No. Rujukan: JKM-KLG-20260519-0042</div>
+  <div class="success-title">{{ t.refconf_success_title }}</div>
+  <div class="success-sub">{{ t.refconf_success_sub }}</div>
+  <div class="ref-id">{{ t.refconf_ref_id }}</div>
 </div>
 
 <div class="alert alert-success">
-  <div class="alert-title">✅ Penghantaran Berjaya</div>
-  <div class="alert-body">Rujukan telah dihantar melalui aliran pengambilan JKM Johor yang sedia ada. Tiada perjanjian institusi baru diperlukan.</div>
+  <div class="alert-title">{{ t.refconf_alert1_title }}</div>
+  <div class="alert-body">{{ t.refconf_alert1_body }}</div>
 </div>
 
 <div class="alert alert-grey">
-  <div class="alert-title">🔒 Kerahsiaan Terjamin</div>
-  <div class="alert-body">Tiada data perubatan atau diagnosis dihantar. Jiran-jiran dan komuniti tidak akan mengetahui rujukan ini. Keluarga Hassan dilindungi daripada <em>malu</em> awam.</div>
+  <div class="alert-title">{{ t.refconf_alert2_title }}</div>
+  <div class="alert-body">{{ t.refconf_alert2_body | safe }}</div>
 </div>
 
 <div class="alert alert-info">
-  <div class="alert-title">📋 Skim Yang Dicadangkan kepada JKM</div>
-  <div class="alert-body">
-    • Bantuan OKU — RM 300/bulan<br>
-    • Elaun Penjagaan OKU — RM 450/bulan<br>
-    • Terapi NASOM disubsidi — sehingga 80%
-  </div>
+  <div class="alert-title">{{ t.refconf_alert3_title }}</div>
+  <div class="alert-body">{{ t.refconf_alert3_body | safe }}</div>
 </div>
 
-<a href="/aid" class="btn btn-secondary">🏠 &nbsp; Kembali ke Direktori Bantuan</a>
+<a href="/aid" class="btn btn-secondary">{{ t.refconf_btn_back }}</a>
 
 {% endblock %}

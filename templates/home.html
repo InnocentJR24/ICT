@@ -2,53 +2,53 @@
 {% block content %}
 <div class="top-nav">
   <div class="nav-row">
-    <div><h1>Selamat pagi, Siew Hua 👋</h1><div class="sub">Isnin, 19 Mei 2026</div></div>
+    <div><h1>{{ t.home_greeting }}</h1><div class="sub">{{ t.home_date }}</div></div>
     <div class="avatar">SH</div>
   </div>
   <div class="progress-hero">
-    <div class="label">DARREN · 6 TAHUN · MINGGU 14</div>
+    <div class="label">{{ t.home_progress_label }}</div>
     <div class="ph-row">
-      <div><div class="big-pct">78%</div><div class="big-pct-sub">program selesai</div></div>
+      <div><div class="big-pct">78%</div><div class="big-pct-sub">{{ t.home_program_complete }}</div></div>
       <div class="pb-wrap"><div class="pb-track"><div class="pb-fill" style="width:78%"></div></div></div>
-      <div class="ph-right"><div class="val">5/7 sesi</div><div class="lbl">minggu ini</div></div>
+      <div class="ph-right"><div class="val">{{ t.home_sessions }}</div><div class="lbl">{{ t.home_this_week }}</div></div>
     </div>
   </div>
 </div>
-<div class="section-label">AKTIVITI HARI INI</div>
+<div class="section-label">{{ t.home_today_activities }}</div>
 <div class="card">
   <div class="act-row">
     <div class="act-icon" style="background:#e8f5f3">🗣️</div>
-    <div class="act-info"><div class="act-title">Latihan Perhatian Bersama</div><div class="act-sub">10 min · Fasa 1 · 🔊 Audio</div></div>
-    <span class="pill pill-amber">Hari ini</span>
+    <div class="act-info"><div class="act-title">{{ t.home_act1_title }}</div><div class="act-sub">{{ t.home_act1_sub }}</div></div>
+    <span class="pill pill-amber">{{ t.home_pill_today }}</span>
   </div>
   <div class="act-row">
     <div class="act-icon" style="background:#fdf0eb">👋</div>
-    <div class="act-info"><div class="act-title">Permainan Peniruan</div><div class="act-sub">8 min · Fasa 1 · 🎬 Video</div></div>
-    <span class="pill pill-grey">Selepas ini</span>
+    <div class="act-info"><div class="act-title">{{ t.home_act2_title }}</div><div class="act-sub">{{ t.home_act2_sub }}</div></div>
+    <span class="pill pill-grey">{{ t.home_pill_next }}</span>
   </div>
   <div class="act-row">
     <div class="act-icon" style="background:#fef9ec">📚</div>
-    <div class="act-info"><div class="act-title">Buku Cerita Sosial</div><div class="act-sub">12 min · Fasa 2 · ✨ Baru</div></div>
-    <span class="pill pill-grey">Selepas ini</span>
+    <div class="act-info"><div class="act-title">{{ t.home_act3_title }}</div><div class="act-sub">{{ t.home_act3_sub }}</div></div>
+    <span class="pill pill-grey">{{ t.home_pill_next }}</span>
   </div>
 </div>
-<div class="section-label">MESEJ DARIPADA PAKAR</div>
+<div class="section-label">{{ t.home_msg_from_specialist }}</div>
 <div class="doc-card">
   <div class="avatar" style="background:var(--teal);width:38px;height:38px;font-size:12px;flex-shrink:0">DR</div>
   <div>
-    <div class="doc-name">Dr. Arina Zulkifli · NASOM JB</div>
-    <div class="doc-msg">Kemajuan Darren minggu lepas sangat menggalakkan! Teruskan latihan perhatian bersama setiap hari 💪</div>
-    <div class="doc-time">Semalam 14:22</div>
+    <div class="doc-name">Dr. Arina Zulkifli · {{ t.home_doc_org }}</div>
+    <div class="doc-msg">{{ t.home_doc_msg }}</div>
+    <div class="doc-time">{{ t.home_doc_time }}</div>
   </div>
 </div>
-<div class="section-label">KEMAJUAN MINGGU INI</div>
+<div class="section-label">{{ t.home_week_progress }}</div>
 <div class="stat-strip">
-  <div class="stat-box"><div class="stat-num">4/5</div><div class="stat-lbl">Kontak mata</div></div>
-  <div class="stat-box"><div class="stat-num">↑18%</div><div class="stat-lbl">Vokalisasi</div></div>
-  <div class="stat-box"><div class="stat-num">7 hari</div><div class="stat-lbl">Berturut-turut</div></div>
+  <div class="stat-box"><div class="stat-num">4/5</div><div class="stat-lbl">{{ t.home_stat_eye }}</div></div>
+  <div class="stat-box"><div class="stat-num">↑18%</div><div class="stat-lbl">{{ t.home_stat_voc }}</div></div>
+  <div class="stat-box"><div class="stat-num">{{ t.home_stat_streak_val }}</div><div class="stat-lbl">{{ t.home_stat_streak }}</div></div>
 </div>
 <div class="btn-row">
-  <a href="/therapy" class="btn btn-primary">▶️ Mulakan Sesi</a>
-  <a href="/chat"    class="btn btn-secondary">💬 Hubungi Pakar</a>
+  <a href="/therapy" class="btn btn-primary">{{ t.home_btn_start }}</a>
+  <a href="/chat"    class="btn btn-secondary">{{ t.home_btn_contact }}</a>
 </div>
 {% endblock %}

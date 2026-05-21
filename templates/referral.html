@@ -3,32 +3,32 @@
 <div class="top-nav">
   <div class="nav-row">
     <a href="/aid" class="back-btn">←</a>
-    <div><div class="nav-title">Rujukan Diskrit ke JKM</div><div class="nav-sub">Tiada data klinikal disertakan</div></div>
+    <div><div class="nav-title">{{ t.ref_title }}</div><div class="nav-sub">{{ t.ref_sub }}</div></div>
     <div class="avatar" style="background:var(--coral);font-size:12px;width:34px;height:34px">KK</div>
   </div>
 </div>
 <div style="height:14px"></div>
 <div id="ref-form">
   <div class="privacy-banner">
-    <strong>🔒 TEMBOK PRIVASI AKTIF</strong>
-    <span>Anda hanya dapat melihat maklumat kelayakan kebajikan. Rekod klinikal tidak boleh diakses.</span>
+    <strong>{{ t.ref_privacy_title }}</strong>
+    <span>{{ t.ref_privacy_body }}</span>
   </div>
-  <div class="form-field"><div class="form-label">Nama Keluarga</div><div class="form-value">Hassan bin Malik</div></div>
-  <div class="form-field"><div class="form-label">4 Digit Akhir IC</div><div class="form-value" style="letter-spacing:.1em">●●●● – ●●●● – 5231</div></div>
-  <div class="form-field"><div class="form-label">Daerah</div><div class="form-value">Kluang, Johor</div></div>
-  <div class="form-field"><div class="form-label">Pendapatan Isi Rumah</div><div class="form-value">RM 1,200 / bulan <span class="pill pill-green">B40 ✓</span></div></div>
-  <div class="form-field"><div class="form-label">Sebab Rujukan (Umum)</div><div class="form-value">Keluarga memerlukan panduan kewangan dan sokongan kebajikan untuk kanak-kanak OKU.</div></div>
-  <div class="form-field"><div class="form-label">Data Klinikal Disertakan?</div><div class="form-value" style="color:var(--success)">❌ Tidak — tidak dibenarkan oleh sistem</div></div>
-  <div class="btn-row"><button id="ref-submit" class="btn btn-primary">📨 Hantar Rujukan ke JKM Johor</button></div>
+  <div class="form-field"><div class="form-label">{{ t.ref_field_name }}</div><div class="form-value">Hassan bin Malik</div></div>
+  <div class="form-field"><div class="form-label">{{ t.ref_field_ic }}</div><div class="form-value" style="letter-spacing:.1em">●●●● – ●●●● – 5231</div></div>
+  <div class="form-field"><div class="form-label">{{ t.ref_field_district }}</div><div class="form-value">Kluang, Johor</div></div>
+  <div class="form-field"><div class="form-label">{{ t.ref_field_income }}</div><div class="form-value">RM 1,200 / {{ 'month' if lang == 'en' else 'bulan' }} <span class="pill pill-green">B40 ✓</span></div></div>
+  <div class="form-field"><div class="form-label">{{ t.ref_field_reason }}</div><div class="form-value">{{ t.ref_field_reason_val }}</div></div>
+  <div class="form-field"><div class="form-label">{{ t.ref_field_clinical }}</div><div class="form-value" style="color:var(--success)">{{ t.ref_field_clinical_val }}</div></div>
+  <div class="btn-row"><button id="ref-submit" class="btn btn-primary">{{ t.ref_btn_submit }}</button></div>
 </div>
 <div id="ref-success" style="display:none">
   <div class="success-screen">
     <div class="big-emoji">✅</div>
-    <h2>Rujukan Dihantar</h2>
-    <div class="ref-no">No. Rujukan: <strong>JKM-KLG-20260519-0042</strong></div>
+    <h2>{{ t.ref_success_title }}</h2>
+    <div class="ref-no">{{ t.ref_success_no }}<strong>JKM-KLG-20260519-0042</strong></div>
   </div>
-  <div class="alert alert-success"><strong>📬 JKM Johor akan menghubungi dalam 5–7 hari bekerja</strong>Pegawai JKM akan menilai kelayakan keluarga Hassan secara langsung.</div>
-  <div class="alert alert-info"><strong>🔒 KERAHSIAAN TERJAMIN</strong>Tiada data perubatan dihantar. Jiran-jiran tidak akan mengetahui rujukan ini.</div>
-  <div class="btn-row"><a href="/" class="btn btn-secondary">🏠 Selesai</a></div>
+  <div class="alert alert-success"><strong>{{ t.ref_success_alert_title }}</strong>{{ t.ref_success_alert_body }}</div>
+  <div class="alert alert-info"><strong>{{ t.ref_confidential_title }}</strong>{{ t.ref_confidential_body }}</div>
+  <div class="btn-row"><a href="/" class="btn btn-secondary">{{ t.ref_done_btn }}</a></div>
 </div>
 {% endblock %}

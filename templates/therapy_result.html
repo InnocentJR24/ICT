@@ -3,30 +3,30 @@
 <div class="top-nav">
   <div class="nav-row">
     <a href="/" class="back-btn">←</a>
-    <div><div class="nav-title">Sesi Selesai</div><div class="nav-sub">Latihan Perhatian Bersama</div></div>
+    <div><div class="nav-title">{{ t.result_nav_title }}</div><div class="nav-sub">{{ t.result_nav_sub }}</div></div>
     <div style="width:36px"></div>
   </div>
 </div>
 <div style="text-align:center;padding:28px 20px 14px">
   <div style="font-size:56px">🎉</div>
-  <div style="font-size:22px;font-weight:800;color:var(--text);margin:10px 0 4px">Sesi Selesai!</div>
-  <div style="font-size:13px;color:var(--muted)">Darren melakukan dengan baik hari ini</div>
+  <div style="font-size:22px;font-weight:800;color:var(--text);margin:10px 0 4px">{{ t.result_title }}</div>
+  <div style="font-size:13px;color:var(--muted)">{{ t.result_sub }}</div>
 </div>
 <div class="stat-strip">
-  <div class="stat-box"><div class="stat-num">{{ score }}/5</div><div class="stat-lbl">Kontak mata</div></div>
-  <div class="stat-box"><div class="stat-num">{% if mood in ["happy","very_happy"] %}😄{% elif mood=="neutral" %}😐{% else %}😕{% endif %}</div><div class="stat-lbl">Mood</div></div>
-  <div class="stat-box"><div class="stat-num">9 min</div><div class="stat-lbl">Tempoh</div></div>
+  <div class="stat-box"><div class="stat-num">{{ score }}/5</div><div class="stat-lbl">{{ t.result_stat_eye }}</div></div>
+  <div class="stat-box"><div class="stat-num">{% if mood in ["happy","very_happy"] %}😄{% elif mood=="neutral" %}😐{% else %}😕{% endif %}</div><div class="stat-lbl">{{ t.result_stat_mood }}</div></div>
+  <div class="stat-box"><div class="stat-num">{{ t.result_duration_val }}</div><div class="stat-lbl">{{ t.result_stat_duration }}</div></div>
 </div>
-<div class="section-label">TREND 14 HARI — KONTAK MATA</div>
+<div class="section-label">{{ t.result_trend_label }}</div>
 <div class="bar-chart">
   {% for h in bars %}<div class="bar {% if loop.last %}hi{% endif %}" style="height:{{ h }}px"></div>{% endfor %}
 </div>
 <div class="alert alert-info">
-  <strong>💾 DISIMPAN SECARA TEMPATAN</strong>
-  Data kemajuan disimpan. Akan disegerakkan ke awan apabila dalam talian.
+  <strong>{{ t.result_saved_title }}</strong>
+  {{ t.result_saved_body }}
 </div>
 <div class="btn-row">
-  <a href="/chat" class="btn btn-primary">📤 Hantar ke Pakar</a>
-  <a href="/"     class="btn btn-secondary">🏠 Utama</a>
+  <a href="/chat" class="btn btn-primary">{{ t.result_btn_send }}</a>
+  <a href="/"     class="btn btn-secondary">{{ t.result_btn_home }}</a>
 </div>
 {% endblock %}

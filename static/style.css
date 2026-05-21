@@ -44,6 +44,21 @@ a { text-decoration: none; color: inherit; }
   border-radius: 32px 32px 0 0;
 }
 
+/* ── Language toggle ── */
+.lang-toggle {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--dark);
+  background: rgba(255,255,255,0.9);
+  border-radius: 6px;
+  padding: 2px 7px;
+  letter-spacing: .03em;
+  text-decoration: none;
+  transition: background .15s;
+}
+.lang-toggle:hover { background: #fff; }
+
 /* ── Bottom nav ── */
 .bottom-nav {
   position: absolute;

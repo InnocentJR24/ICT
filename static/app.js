@@ -74,45 +74,46 @@ document.addEventListener('DOMContentLoaded', function () {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       }).then(r => r.json()).then(res => {
+        const T = window.T || {};
         const verdict =
-          res.pct >= 70 ? ['✅ Perkembangan Baik', 'Pencapaian Ahmad berada dalam julat yang baik. Teruskan sokongan semasa.', 'success']
-          : res.pct >= 40 ? ['⚠️ Perlu Perhatian', 'Beberapa kawasan memerlukan sokongan tambahan. Rujuk rancangan intervensi.', 'warn']
-          : ['🚨 Intervensi Segera', 'Skor rendah menunjukkan keperluan intervensi segera. Hantar rujukan ke hospital.', 'danger'];
+          res.pct >= 70 ? [T.ms_verdict_good,    T.ms_verdict_good_body,   'success']
+          : res.pct >= 40 ? [T.ms_verdict_warn,  T.ms_verdict_warn_body,   'warn']
+          : [T.ms_verdict_danger, T.ms_verdict_danger_body, 'danger'];
 
         const sPct = Math.round(res.social / 8 * 100);
         const cPct = Math.round(res.comm   / 8 * 100);
 
         const actionBtn = verdict[2] === 'danger'
-          ? `<a href="#" class="btn btn-danger btn-full" onclick="alert('Laporan dihantar ke Hospital Sultanah Aminah. No. Rujukan: HSA-20260519-0089');return false;">🚨 &nbsp; Hantar Rujukan Segera ke Hospital</a>`
-          : `<a href="#" class="btn btn-primary btn-full" onclick="alert('Laporan dihantar ke pakar untuk semakan.');return false;">📨 &nbsp; Hantar ke Pakar untuk Semakan</a>`;
+          ? `<a href="#" class="btn btn-danger btn-full" onclick="alert(window.T.ms_alert_hospital);return false;">${T.ms_btn_send_hospital}</a>`
+          : `<a href="#" class="btn btn-primary btn-full" onclick="alert(window.T.ms_alert_specialist);return false;">${T.ms_btn_send_specialist}</a>`;
 
         document.getElementById('report-panel').innerHTML = `
           <div class="result-hero">
-            <div class="result-hero-label">Keputusan Penilaian</div>
-            <div class="result-hero-name">Ahmad bin Hassan &nbsp;·&nbsp; 4 tahun</div>
-            <div class="result-hero-meta">Fadzli bin Nordin &nbsp;·&nbsp; 19 Mei 2026</div>
+            <div class="result-hero-label">${T.ms_result_label}</div>
+            <div class="result-hero-name">${T.ms_result_name}</div>
+            <div class="result-hero-meta">${T.ms_result_chw}</div>
             <div class="result-hero-pct">${res.pct}%</div>
-            <div class="result-hero-score">${res.total} daripada ${res.max} markah</div>
+            <div class="result-hero-score">${res.total} ${T.ms_result_score_suffix} ${res.max} ${T.ms_result_score_unit}</div>
           </div>
           <div class="alert alert-${verdict[2]}">
             <div class="alert-title">${verdict[0]}</div>
             <div class="alert-body">${verdict[1]}</div>
           </div>
-          <div class="section-label">Pecahan Mengikut Kategori</div>
+          <div class="section-label">${T.ms_category_label}</div>
           <div class="card">
             <div style="padding:8px 0;">
               <div class="score-wrap">
-                <div class="score-label-row"><span>Sosial</span><span>${res.social} / 8</span></div>
+                <div class="score-label-row"><span>${T.ms_social}</span><span>${res.social} / 8</span></div>
                 <div class="score-track"><div class="score-fill" style="width:${sPct}%;"></div></div>
               </div>
               <div class="score-wrap" style="margin-bottom:4px;">
-                <div class="score-label-row"><span>Komunikasi</span><span>${res.comm} / 8</span></div>
+                <div class="score-label-row"><span>${T.ms_comm}</span><span>${res.comm} / 8</span></div>
                 <div class="score-track"><div class="score-fill" style="width:${cPct}%;"></div></div>
               </div>
             </div>
           </div>
           ${actionBtn}
-          <a href="/milestone" class="btn btn-secondary btn-full">🔄 &nbsp; Mulakan Penilaian Baru</a>
+          <a href="/milestone" class="btn btn-secondary btn-full">${T.ms_btn_new}</a>
         `;
         document.getElementById('report-panel').style.display = 'block';
         document.getElementById('ms-form-wrap').style.display = 'none';

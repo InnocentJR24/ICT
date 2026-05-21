@@ -3,17 +3,17 @@
 <div class="top-nav">
   <div class="nav-row">
     <a href="/" class="back-btn">←</a>
-    <div><div class="nav-title">Penilaian Pencapaian</div><div class="nav-sub">Ahmad bin Hassan · 4 tahun</div></div>
+    <div><div class="nav-title">{{ t.ms_nav_title }}</div><div class="nav-sub">{{ t.ms_nav_sub }}</div></div>
     <div class="avatar" style="background:var(--amber);font-size:12px;width:34px;height:34px">FB</div>
   </div>
 </div>
 <div id="report-panel" style="display:none"></div>
 <div id="ms-form-wrap">
 <form id="ms-form">
-{% set social_items = [("ms1","Balas nama apabila dipanggil"),("ms2","Hubungan mata semasa berinteraksi"),("ms3","Minat pada kanak-kanak lain"),("ms4","Bermain imaginasi / pura-pura")] %}
-{% set comm_items = [("ms5","Frasa 2 patah perkataan"),("ms6","Menunjuk benda untuk tunjuk minat"),("ms7","Ikut arahan 2 langkah"),("ms8","Faham soalan mudah")] %}
+{% set social_items = [("ms1", t.ms_item_ms1), ("ms2", t.ms_item_ms2), ("ms3", t.ms_item_ms3), ("ms4", t.ms_item_ms4)] %}
+{% set comm_items   = [("ms5", t.ms_item_ms5), ("ms6", t.ms_item_ms6), ("ms7", t.ms_item_ms7), ("ms8", t.ms_item_ms8)] %}
 {% set defaults = {"ms1":"partial","ms2":"partial","ms3":"cross","ms4":"cross","ms5":"cross","ms6":"partial","ms7":"cross","ms8":"partial"} %}
-<div class="section-label">SOSIAL</div>
+<div class="section-label">{{ t.ms_social_label }}</div>
 <div class="card">
 {% for key, label in social_items %}
 <input type="hidden" name="ms_{{ key }}" value="{{ defaults[key] }}">
@@ -27,7 +27,7 @@
 </div>
 {% endfor %}
 </div>
-<div class="section-label">KOMUNIKASI</div>
+<div class="section-label">{{ t.ms_comm_label }}</div>
 <div class="card">
 {% for key, label in comm_items %}
 <input type="hidden" name="ms_{{ key }}" value="{{ defaults[key] }}">
@@ -41,7 +41,7 @@
 </div>
 {% endfor %}
 </div>
-<button type="submit" class="btn btn-primary btn-full">📊 Jana Laporan</button>
+<button type="submit" class="btn btn-primary btn-full">{{ t.ms_btn_report }}</button>
 </form>
 </div>
 {% endblock %}

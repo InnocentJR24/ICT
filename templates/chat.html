@@ -5,32 +5,32 @@
     <a href="/" class="back-btn">←</a>
     <div style="display:flex;align-items:center;gap:10px">
       <div class="avatar" style="background:var(--amber);font-size:12px;width:34px;height:34px;flex-shrink:0">DR</div>
-      <div><div style="font-size:14px;font-weight:800;color:#fff">Dr. Arina Zulkifli</div><div class="sub">NASOM Johor Bahru · Balas dalam 24j</div></div>
+      <div><div style="font-size:14px;font-weight:800;color:#fff">Dr. Arina Zulkifli</div><div class="sub">{{ t.chat_sub }}</div></div>
     </div>
     <span style="color:#fff;font-size:20px">⋮</span>
   </div>
 </div>
 <div class="chat-body">
-  <div class="day-sep"><span>Khamis, 15 Mei</span></div>
+  <div class="day-sep"><span>{{ t.chat_day1 }}</span></div>
   <div class="bw in">
     <div class="b-sender">Dr. Arina</div>
-    <div class="bubble in">Siew Hua, laporan minggu lepas sudah saya terima. Kontak mata Darren meningkat dari 2/5 ke 4/5 — ini sangat positif! 👏</div>
+    <div class="bubble in">{{ t.chat_msg1 }}</div>
     <div class="b-time">14:22</div>
   </div>
   <div class="bw out">
-    <div class="bubble out">Terima kasih Doktor. Darren masih susah untuk duduk diam lebih dari 5 minit.</div>
+    <div class="bubble out">{{ t.chat_msg2 }}</div>
     <div class="b-time">16:05</div>
   </div>
   <div class="bw in">
     <div class="b-sender">Dr. Arina</div>
-    <div class="bubble in">Normal untuk umur dan tahap dia. Cuba pendekkan sesi kepada 3–4 minit dengan rehat pendek. Saya akan muat naik video demonstrasi hari Sabtu.</div>
+    <div class="bubble in">{{ t.chat_msg3 }}</div>
     <div class="b-time">17:30</div>
   </div>
-  <div class="day-sep"><span>Hari ini, 19 Mei</span></div>
+  <div class="day-sep"><span>{{ t.chat_day2 }}</span></div>
   <div class="bw out">
-    <div class="bubble out"><span class="bsub">📊 LAPORAN SESI — 19 Mei</span>Kontak mata: 4/5 · Mood: 🙂 · 9 min<br><span style="font-size:11px;opacity:.8">Latihan Perhatian Bersama, Fasa 1</span></div>
+    <div class="bubble out"><span class="bsub">{{ t.chat_report_label }}</span>{{ t.chat_report_detail }}<br><span style="font-size:11px;opacity:.8">{{ t.chat_report_sub }}</span></div>
     <div class="b-time">09:41</div>
   </div>
-  <div class="pending-box">⏱ MENUNGGU BALASAN · Dr. Arina biasanya balas dalam 24 jam</div>
+  <div class="pending-box">{{ t.chat_pending }}</div>
 </div>
 {% endblock %}

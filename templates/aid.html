@@ -3,35 +3,35 @@
 <div class="top-nav">
   <div class="nav-row">
     <a href="/" class="back-btn">←</a>
-    <div><div class="nav-title">Bantuan Kewangan</div><div class="nav-sub">Daerah Kluang · 4 skim tersedia</div></div>
+    <div><div class="nav-title">{{ t.aid_title }}</div><div class="nav-sub">{{ t.aid_sub }}</div></div>
     <span style="color:#fff;font-size:20px">🔍</span>
   </div>
 </div>
 <div style="height:14px"></div>
-<div class="search-bar">🔍 Cari skim bantuan...</div>
+<div class="search-bar">{{ t.aid_search }}</div>
 <div class="scheme">
-  <div class="scheme-head"><div class="scheme-name">Bantuan OKU</div><span class="pill pill-green">Layak ✓</span></div>
-  <div class="scheme-amount">RM 300 / bulan</div>
-  <div class="scheme-meta">📍 Pejabat JKM Kluang · Permohonan boleh dibuat dalam talian</div>
+  <div class="scheme-head"><div class="scheme-name">{{ t.aid_scheme1_name }}</div><span class="pill pill-green">{{ t.aid_pill_eligible }}</span></div>
+  <div class="scheme-amount">{{ t.aid_scheme1_amount }}</div>
+  <div class="scheme-meta">{{ t.aid_scheme1_meta }}</div>
 </div>
 <div class="scheme">
-  <div class="scheme-head"><div class="scheme-name">Elaun Penjagaan OKU</div><span class="pill pill-green">Layak ✓</span></div>
-  <div class="scheme-amount">RM 450 / bulan</div>
-  <div class="scheme-meta">📍 Pejabat Daerah Kluang · Untuk penjaga sepenuh masa</div>
+  <div class="scheme-head"><div class="scheme-name">{{ t.aid_scheme2_name }}</div><span class="pill pill-green">{{ t.aid_pill_eligible }}</span></div>
+  <div class="scheme-amount">{{ t.aid_scheme2_amount }}</div>
+  <div class="scheme-meta">{{ t.aid_scheme2_meta }}</div>
 </div>
 <div class="scheme">
-  <div class="scheme-head"><div class="scheme-name">Terapi Disubsidi NASOM</div><span class="pill pill-amber">Semak</span></div>
-  <div class="scheme-amount">Sehingga 80% subsidi</div>
-  <div class="scheme-meta">📍 NASOM Johor Bahru · Tertakluk pada ketersediaan</div>
+  <div class="scheme-head"><div class="scheme-name">{{ t.aid_scheme3_name }}</div><span class="pill pill-amber">{{ t.aid_pill_check }}</span></div>
+  <div class="scheme-amount">{{ t.aid_scheme3_amount }}</div>
+  <div class="scheme-meta">{{ t.aid_scheme3_meta }}</div>
 </div>
 <div class="scheme">
-  <div class="scheme-head"><div class="scheme-name">Tabung Kebajikan ASD Johor</div><span class="pill pill-grey">Semak</span></div>
-  <div class="scheme-amount">RM 100 – 500</div>
-  <div class="scheme-meta">📍 Pejabat JKM Johor Bahru · Permohonan dibuka Julai</div>
+  <div class="scheme-head"><div class="scheme-name">{{ t.aid_scheme4_name }}</div><span class="pill pill-grey">{{ t.aid_pill_check }}</span></div>
+  <div class="scheme-amount">{{ t.aid_scheme4_amount }}</div>
+  <div class="scheme-meta">{{ t.aid_scheme4_meta }}</div>
 </div>
 <div class="alert alert-info" style="margin-top:4px">
-  <strong>📵 TERSEDIA LUAR TALIAN</strong>
-  Direktori ini dimuat turun dan boleh diakses tanpa internet. Dikemaskini 18 Mei 2026.
+  <strong>{{ t.aid_offline_title }}</strong>
+  {{ t.aid_offline_body }}
 </div>
-<div class="btn-row"><a href="/referral" class="btn btn-primary">📨 Jana Rujukan</a></div>
+<div class="btn-row"><a href="/referral" class="btn btn-primary">{{ t.aid_btn_referral }}</a></div>
 {% endblock %}

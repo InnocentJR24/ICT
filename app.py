@@ -1,7 +1,21 @@
-from flask import Flask, render_template, request, jsonify, session
+from flask import Flask, render_template, request, jsonify, session, redirect
+from translations import TRANSLATIONS
 
 app = Flask(__name__)
 app.secret_key = "sayangasd-demo-2026"
+
+@app.context_processor
+def inject_translations():
+    lang = session.get('lang', 'ms')
+    return {'t': TRANSLATIONS[lang], 'lang': lang}
+
+@app.route("/set-language")
+def set_language():
+    lang = request.args.get('lang', 'ms')
+    if lang not in TRANSLATIONS:
+        lang = 'ms'
+    session['lang'] = lang
+    return redirect(request.referrer or '/')
 
 @app.route("/")
 def index():

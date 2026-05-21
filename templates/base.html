@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="{{ lang }}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -10,14 +10,20 @@
 </head>
 <body>
 <div class="shell">
-  <div class="status-bar"><span>09:41</span><span>🔋 74% &nbsp;📶 4G</span></div>
+  <div class="status-bar">
+    <span>09:41</span>
+    <span style="display:flex;align-items:center;gap:8px">
+      <a href="/set-language?lang={{ t.lang_code }}" class="lang-toggle">{{ t.lang_toggle }}</a>
+      🔋 74% &nbsp;📶 4G
+    </span>
+  </div>
   {% block content %}{% endblock %}
   <nav class="bottom-nav">
-    <a href="/"          class="nav-item {% if active=='home'      %}active{% endif %}"><span class="nav-icon">🏠</span>Utama</a>
-    <a href="/therapy"   class="nav-item {% if active=='therapy'   %}active{% endif %}"><span class="nav-icon">🗣️</span>Terapi</a>
-    <a href="/milestone" class="nav-item {% if active=='milestone' %}active{% endif %}"><span class="nav-icon">📋</span>Penilaian</a>
-    <a href="/aid"       class="nav-item {% if active=='aid'       %}active{% endif %}"><span class="nav-icon">💰</span>Bantuan</a>
-    <a href="/chat"      class="nav-item {% if active=='chat'      %}active{% endif %}"><span class="nav-icon">💬</span>Pakar</a>
+    <a href="/"          class="nav-item {% if active=='home'      %}active{% endif %}"><span class="nav-icon">🏠</span>{{ t.nav_home }}</a>
+    <a href="/therapy"   class="nav-item {% if active=='therapy'   %}active{% endif %}"><span class="nav-icon">🗣️</span>{{ t.nav_therapy }}</a>
+    <a href="/milestone" class="nav-item {% if active=='milestone' %}active{% endif %}"><span class="nav-icon">📋</span>{{ t.nav_milestone }}</a>
+    <a href="/aid"       class="nav-item {% if active=='aid'       %}active{% endif %}"><span class="nav-icon">💰</span>{{ t.nav_aid }}</a>
+    <a href="/chat"      class="nav-item {% if active=='chat'      %}active{% endif %}"><span class="nav-icon">💬</span>{{ t.nav_chat }}</a>
   </nav>
 </div>
 <button class="demo-toggle" onclick="document.getElementById('demo-nav').classList.toggle('open')">☰ Demo Nav</button>
@@ -36,6 +42,7 @@
   <a href="/offline"  class="demo-link {% if active=='offline'  %}cur{% endif %}">📵 Offline Mode</a>
   <a href="/conflict" class="demo-link {% if active=='conflict' %}cur{% endif %}">⚠️ Sync Conflict</a>
 </div>
+<script>window.T = {{ t | tojson }};</script>
 <script src="/static/app.js"></script>
 </body>
 </html>
